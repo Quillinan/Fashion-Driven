@@ -13,3 +13,7 @@ function pegarCitacao() {
 }
 
 pegarCitacao();
+
+function selected() {
+  console.log('fui clickado');
+}
