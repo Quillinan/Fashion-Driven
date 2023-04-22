@@ -2,13 +2,13 @@ header {
   background-color: #404eed;
   height: 89px;
   width: 1366px;
+  border: none;
 }
 header img {
   padding-top: 16px;
   padding-left: 80px;
 }
 main {
-  font-family: 'Roboto', sans-serif;
   width: 1366px;
   border: none;
 
@@ -17,17 +17,20 @@ main {
   justify-content: space-between;
 }
 main h1 {
-  font-family: Roboto;
-  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
   font-weight: 400;
+  font-size: 18px;
   line-height: 21px;
-  text-align: left;
+  color: #232323;
 }
 main p {
-  font-family: Roboto;
-  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  font-style: normal;
   font-weight: 400;
+  font-size: 18px;
   line-height: 21px;
+  color: #232323;
 
   margin-top: 8px;
 
@@ -44,14 +47,25 @@ main p {
   flex-direction: column;
   justify-content: center;
 }
+.order-model {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
 .order-card-content {
   display: flex;
+  margin-left: 125px;
+  width: 400px;
   justify-content: space-between;
+}
+.order-card-content-selected {
+  border: 3px groove #404eed;
 }
 .order-card {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 
   margin-top: 8.5px;
 }
@@ -66,13 +80,11 @@ main p {
   align-items: center;
   justify-content: center;
 }
-.order-model-selection-img-selected {
-  border: 3px groove #404eed;
-}
 .image-content {
   background-color: #404eed;
   height: 785px;
   width: 670.5px;
+  border: none;
 
   display: flex;
   align-items: center;
