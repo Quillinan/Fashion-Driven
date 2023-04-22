@@ -14,6 +14,17 @@ function pegarCitacao() {
 
 pegarCitacao();
 
-function selected() {
-  console.log('fui clickado');
+function selectedCollar() {
+  // const selected = document.querySelector('')
+  console.log('uiui');
+}
+
+function selectedModel() {
+  // const selected = document.querySelector('')
+  console.log('uiui');
+}
+
+function selectedTissue() {
+  // const selected = document.querySelector('')
+  console.log('uiui');
 }

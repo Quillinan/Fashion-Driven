@@ -2,51 +2,62 @@ header {
   background-color: #404eed;
   height: 89px;
   width: 1366px;
-
-  padding-left: 80px;
 }
 header img {
   padding-top: 16px;
+  padding-left: 80px;
 }
 main {
   font-family: 'Roboto', sans-serif;
-
   width: 1366px;
+  border: none;
 
   display: flex;
-  align-items: row;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
 }
-main .h1 {
+main h1 {
   font-family: Roboto;
   font-size: 18px;
   font-weight: 400;
   line-height: 21px;
   text-align: left;
 }
-main .p {
+main p {
   font-family: Roboto;
   font-size: 18px;
   font-weight: 400;
   line-height: 21px;
+
+  margin-top: 8px;
 
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .order-content {
-  height: 706px;
-  width: 400px;
+  height: 100%;
+  width: 50%;
+  margin-top: 8px;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.order-model-selection-img {
+.order-card-content {
+  display: flex;
+  justify-content: space-between;
+}
+.order-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 8.5px;
+}
+.order-card-img {
   height: 100px;
   width: 100px;
-  left: 125px;
-  top: 156px;
   border: 0.5px groove #c4c4c4;
   background: #f2f2f2;
   border-radius: 100%;
@@ -55,14 +66,15 @@ main .p {
   align-items: center;
   justify-content: center;
 }
-.order-model-selection-content {
-  margin-top: 8px;
-  display: flex;
-  align-items: row;
+.order-model-selection-img-selected {
+  border: 3px groove #404eed;
 }
 .image-content {
   background-color: #404eed;
   height: 785px;
-  width: 670px;
-  left: 695px;
+  width: 670.5px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
