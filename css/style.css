@@ -47,7 +47,7 @@ main p {
   flex-direction: column;
   justify-content: center;
 }
-.order-model {
+.order {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -58,8 +58,11 @@ main p {
   width: 400px;
   justify-content: space-between;
 }
-.order-card-content-selected {
+.selected {
   border: 3px groove #404eed;
+}
+.unselected {
+  border: 0.5px groove #c4c4c4;
 }
 .order-card {
   display: flex;
@@ -72,7 +75,7 @@ main p {
 .order-card-img {
   height: 100px;
   width: 100px;
-  border: 0.5px groove #c4c4c4;
+
   background: #f2f2f2;
   border-radius: 100%;
 
