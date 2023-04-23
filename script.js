@@ -1,19 +1,3 @@
-function pegarCitacao() {
-  const promise = axios.get('https://api.quotable.io/random');
-  promise.then((res) => {
-    console.log(res);
-    divCitacao.innerHTML = `
-          <i>${res.data.content}</i>
-          <p>- ${res.data.author}</p>
-      `;
-  });
-  promise.catch((err) => {
-    console.log(err);
-  });
-}
-
-pegarCitacao();
-
 function selectedModel(model) {
   const selected = document.querySelector('.models');
   const model_selected = selected.querySelector('.selected');
@@ -55,3 +39,21 @@ function selectedTissue(tissue) {
   tissue.classList.remove('unselected');
   tissue.classList.add('selected');
 }
+
+function inputLink(input) {
+  console.log(input);
+}
+
+function getShirts() {
+  const promise = axios.get(
+    'https://mock-api.driven.com.br/api/v4/shirts-api/shirts'
+  );
+  promise.then((res) => {
+    console.log(res);
+  });
+  promise.catch((err) => {
+    console.log(err);
+  });
+}
+
+getShirts();
