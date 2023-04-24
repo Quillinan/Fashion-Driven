@@ -18,27 +18,21 @@ main {
   flex-direction: row;
   justify-content: space-between;
 }
-main h1 {
+h1 {
   font-family: 'Roboto', sans-serif;
-  font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
   color: #232323;
 }
-main p {
+p {
   font-family: 'Roboto', sans-serif;
-  font-style: normal;
   font-weight: 400;
   font-size: 18px;
   line-height: 21px;
   color: #232323;
 
   margin-top: 8px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .order-content {
   height: 100%;
@@ -141,5 +135,45 @@ input:active {
 
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+.last-order-content {
+  display: flex;
+  flex-direction: column;
+  background-color: #f2f2f2;
+  justify-content: center;
+  align-items: center;
+
+  width: 1366px;
+  height: 342px;
+}
+.last-order-cards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.last-order-card {
+  height: 236px;
+  width: 202px;
+  border-radius: 10px;
+
+  margin-left: 16px;
+  margin-right: 16px;
+
+  background: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.last-order-card-img {
+  height: 180px;
+  width: 180px;
+}
+.last-order-card-text {
+  display: flex;
+  flex-direction: row;
   justify-content: center;
 }

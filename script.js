@@ -1,3 +1,5 @@
+// const user = prompt('Qual é o seu nome?');
+
 function selectedModel(model) {
   const selected = document.querySelector('.models');
   const model_selected = selected.querySelector('.selected');
@@ -57,3 +59,4 @@ function getShirts() {
 }
 
 getShirts();
+console.log(user);
