@@ -46,6 +46,14 @@ function inputLink(input) {
   console.log(input);
 }
 
+function sendRequest() {
+  if (enabledButton() == true) {
+    console.log('Enviando dados...');
+  } else {
+    console.log('Não pode');
+  }
+}
+
 function getShirts() {
   const promise = axios.get(
     'https://mock-api.driven.com.br/api/v4/shirts-api/shirts'
@@ -58,5 +66,16 @@ function getShirts() {
   });
 }
 
+function enabledButton() {
+  const selections = document.querySelectorAll('.selected');
+  const counter = selections.length;
+
+  if (counter === 3) {
+    const enable = document.querySelector('button');
+    enable.classList.add('enable');
+    return true;
+  }
+  return false;
+}
+
 getShirts();
-console.log(user);

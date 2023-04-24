@@ -56,10 +56,12 @@ p {
   justify-content: space-between;
 }
 .selected {
-  border: 3px groove #404eed;
+  border: 3px solid #404eed;
+  box-sizing: border-box;
 }
 .unselected {
-  border: 0.5px groove #c4c4c4;
+  border: 0.5px solid #c4c4c4;
+  box-sizing: border-box;
 }
 .order-card {
   display: flex;
@@ -109,8 +111,8 @@ input:active {
 
   color: #818181;
 }
-.order button {
-  margin-top: 34px;
+.order-button {
+  margin-top: 24px;
 
   width: 398.61px;
   height: 40px;
@@ -119,6 +121,18 @@ input:active {
   border-radius: 10px;
   border: none;
 }
+.enable {
+  background: #404eed;
+  /* margin-top: 24px;
+
+  width: 398.61px;
+  height: 40px;
+
+  background: #404eed;
+  border-radius: 10px;
+  border: none; */
+}
+
 .button-text {
   font-size: 20px;
   font-weight: 400;
@@ -171,9 +185,15 @@ input:active {
 .last-order-card-img {
   height: 180px;
   width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .last-order-card-text {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+.text-owner {
+  font-weight: 700;
 }

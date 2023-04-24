@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
       rel="stylesheet"
     />
 
@@ -24,7 +24,7 @@
     </header>
 
     <main>
-      <div class="order-content">
+      <div class="order-content" onclick="enabledButton()">
         <!-- Line 1 -->
         <div class="order models">
           <div style="margin-top: 38px">
@@ -148,7 +148,7 @@
           <div class="order-card-input">
             <input type="url" placeholder="Insira o link" />
 
-            <button>
+            <button class="order-button" onclick="sendRequest()">
               <h1 class="button-text">Confirmar pedido</h1>
             </button>
           </div>
