@@ -14,32 +14,32 @@ function selectedModel(model) {
   model.classList.add('selected');
 }
 
-function selectedCollar(collar) {
-  const selected = document.querySelector('.collars');
-  const collar_selected = selected.querySelector('.selected');
-  const collar_check = selected.querySelector('.selected');
+function selectedNeck(neck) {
+  const selected = document.querySelector('.necks');
+  const neck_selected = selected.querySelector('.selected');
+  const neck_check = selected.querySelector('.selected');
 
-  if (collar_selected !== null && collar_check !== null) {
-    collar_selected.classList.add('unselected');
-    collar_selected.classList.remove('selected');
+  if (neck_selected !== null && neck_check !== null) {
+    neck_selected.classList.add('unselected');
+    neck_selected.classList.remove('selected');
   }
 
-  collar.classList.remove('unselected');
-  collar.classList.add('selected');
+  neck.classList.remove('unselected');
+  neck.classList.add('selected');
 }
 
-function selectedTissue(tissue) {
-  const selected = document.querySelector('.tissues');
-  const tissue_selected = selected.querySelector('.selected');
-  const tissue_check = selected.querySelector('.selected');
+function selectedMaterial(material) {
+  const selected = document.querySelector('.materials');
+  const material_selected = selected.querySelector('.selected');
+  const material_check = selected.querySelector('.selected');
 
-  if (tissue_selected !== null && tissue_check !== null) {
-    tissue_selected.classList.add('unselected');
-    tissue_selected.classList.remove('selected');
+  if (material_selected !== null && material_check !== null) {
+    material_selected.classList.add('unselected');
+    material_selected.classList.remove('selected');
   }
 
-  tissue.classList.remove('unselected');
-  tissue.classList.add('selected');
+  material.classList.remove('unselected');
+  material.classList.add('selected');
 }
 
 function inputLink(input) {
@@ -66,11 +66,20 @@ function getShirts() {
   });
 }
 
+function inputCheck() {
+  input = document.querySelector('input').value;
+  if (input !== '') {
+    return true;
+  }
+  return false;
+}
+
 function enabledButton() {
   const selections = document.querySelectorAll('.selected');
   const counter = selections.length;
+  inputCheck();
 
-  if (counter === 3) {
+  if (counter === 3 && inputCheck() == true) {
     const enable = document.querySelector('button');
     enable.classList.add('enable');
     return true;
