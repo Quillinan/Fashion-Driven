@@ -77,13 +77,14 @@ function inputCheck() {
 function enabledButton() {
   const selections = document.querySelectorAll('.selected');
   const counter = selections.length;
+  const enable = document.querySelector('button');
   inputCheck();
 
   if (counter === 3 && inputCheck() == true) {
-    const enable = document.querySelector('button');
     enable.classList.add('enable');
     return true;
   }
+  enable.classList.remove('enable');
   return false;
 }
 
