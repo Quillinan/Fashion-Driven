@@ -1,9 +1,24 @@
-const user = prompt('Qual é o seu nome?');
 let modelSelected = '';
 let neckSelected = '';
 let materialSelected = '';
 let author = '';
 let newAuthor = true;
+
+function createUser() {
+  if (checkUser() == null) {
+    let user = prompt('Qual é o seu nome?');
+    localStorage.setItem('username', user);
+  }
+}
+
+function checkUser() {
+  let userCheck = localStorage.getItem('username');
+  if (userCheck == 'null') {
+    return null;
+  } else {
+    return userCheck;
+  }
+}
 
 function selectedModel(model) {
   const selected = document.querySelector('.models');
@@ -50,7 +65,7 @@ function selectedMaterial(material) {
   material.classList.add('selected');
 }
 
-function getShirts() {
+function getLastOrders() {
   const lastOrderCards = document.querySelector('.last-order-cards');
   const promise = axios.get(
     'https://mock-api.driven.com.br/api/v4/shirts-api/shirts'
@@ -59,7 +74,7 @@ function getShirts() {
     for (i = 0; i <= 9; i++) {
       let owner = res.data[i].owner;
       let image = res.data[i].image;
-      lastOrderCards.innerHTML += ` <div class="last-order-card">
+      lastOrderCards.innerHTML += ` <div id="${i}" class="last-order-card" onclick="repeatLastOrder(this)">
       <div class="last-order-card-img">
         <img src="${image}" />
       </div>
@@ -94,41 +109,33 @@ function enabledButton() {
   return false;
 }
 
-function checkAutor() {
-  if (newAuthor === true) {
-    author = user;
-  }
-}
-
-function post(data) {
+function postShirt(data) {
   const promise = axios.post(
     'https://mock-api.driven.com.br/api/v4/shirts-api/shirts',
     data
   );
-  promise.then(confirm);
+  promise.then(confirmRequest);
   promise.catch(informError);
 }
 
 function sendRequest() {
   if (enabledButton() == true) {
-    checkAutor();
     const data = {
       model: modelSelected,
       neck: neckSelected,
       material: materialSelected,
       image: input,
-      owner: user,
-      author: author,
+      owner: checkUser(),
+      author: checkUser(),
     };
-    post(data);
-  } else {
-    console.log('Não pode');
+    postShirt(data);
   }
 }
 
-function confirm(res) {
+function confirmRequest(res) {
   if (res.status === 201) {
     alert('Encomenda feita com sucesso');
+    window.location.reload();
   }
 }
 
@@ -138,4 +145,36 @@ function informError(err) {
   }
 }
 
-getShirts();
+function repeatLastOrder(card) {
+  let id = card.getAttribute('id');
+  const promise = axios.get(
+    'https://mock-api.driven.com.br/api/v4/shirts-api/shirts'
+  );
+  promise.then((res) => {
+    const data = {
+      model: res.data[id].model,
+      neck: res.data[id].neck,
+      material: res.data[id].material,
+      image: res.data[id].image,
+      owner: res.data[id].owner,
+      author: checkUser(),
+    };
+    if (
+      confirm(` Confirmar o pedido:\n 
+    modelo: ${res.data[id].model}\n 
+    gola: ${res.data[id].neck}\n
+    tecido: ${res.data[id].material}\n
+    criador: ${res.data[id].owner}`) == true
+    ) {
+      postShirt(data);
+    }
+  });
+}
+
+// For Test
+function clearUser() {
+  // localStorage.setItem('username', null);
+  console.log('função de teste que limpa o user do cache');
+}
+
+getLastOrders();

@@ -18,8 +18,8 @@
     <link rel="icon" href="FashionDriven/icon.png" />
     <title>Fashion Driven</title>
   </head>
-  <body>
-    <header>
+  <body onclick="createUser()">
+    <header onclick="clearUser()">
       <img src="FashionDriven/Logo.png" />
     </header>
 
@@ -155,7 +155,12 @@
           </div>
 
           <div class="order-card-input">
-            <input type="url" placeholder="Insira o link" value="" />
+            <input
+              type="url"
+              placeholder="Insira o link"
+              value=""
+              onchange="enabledButton()"
+            />
 
             <button class="order-button" onclick="sendRequest()">
               <h1 class="button-text">Confirmar pedido</h1>
